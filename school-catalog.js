@@ -2,7 +2,7 @@ class School {
   constructor(name,level,numberOfStudents) {
     this._name = name;
     this._level = level;
-    this._numberOfStudents = numberOfStudents;
+    this.numberOfStudents = numberOfStudents;
   }
 
   get name() {
@@ -12,7 +12,7 @@ class School {
     return this._level;
   }
   get numberOfStudents() {
-    return this._numberOfStudents;
+    return this.numberOfStudents;
   }
 
   set numberOfStudents(num) {
@@ -39,7 +39,6 @@ class PrimarySchool extends School {
   constructor(name, numberOfStudents, pickupPolicy) {
     super(name);
     this._level = 'primary';
-    this._numberOfStudents = numberOfStudents;
     this._pickupPolicy = pickupPolicy;
   }
 
