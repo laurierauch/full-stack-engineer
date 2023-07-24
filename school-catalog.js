@@ -2,7 +2,7 @@ class School {
   constructor(name,level,numberOfStudents) {
     this._name = name;
     this._level = level;
-    this.numberOfStudents = numberOfStudents;
+    this._numberOfStudents = numberOfStudents;
   }
 
   get name() {
@@ -12,7 +12,7 @@ class School {
     return this._level;
   }
   get numberOfStudents() {
-    return this.numberOfStudents;
+    return this._numberOfStudents;
   }
 
   set numberOfStudents(num) {
@@ -39,6 +39,7 @@ class PrimarySchool extends School {
   constructor(name, numberOfStudents, pickupPolicy) {
     super(name);
     this._level = 'primary';
+    this._numberOfStudents = numberOfStudents;
     this._pickupPolicy = pickupPolicy;
   }
 
@@ -47,16 +48,18 @@ class PrimarySchool extends School {
   }
 }
 
-class Middle extends School {
+class MiddleSchool extends School {
   constructor(name,numberOfStudents) {
-    super(name,numberOfStudents);
+    super(name);
+    this._numberOfStudents = numberOfStudents;
     this._level = 'Middle';
   }
 }
 
-class High extends School {
+class HighSchool extends School {
   constructor(name,numberOfStudents,sportsTeams) {
-    super(name,numberOfStudents);
+    super(name);
+    this._numberOfStudents = numberOfStudents;
     this._sportsTeams = sportsTeams;
     this._level = "High"
   }
@@ -66,6 +69,12 @@ class High extends School {
   }
 }
 
-const lorraineHansbury = new PrimarySchool('Lorraine Hansbury', 'George', 'Students must be picked up by a parent, guardian or a family member over the age of 13.');
+const lorraineHansbury = new PrimarySchool('Lorraine Hansbury', 514, 'Students must be picked up by a parent, guardian or a family member over the age of 13.');
 
 lorraineHansbury.quickFacts();
+
+const sub = School.pickSubstituteTeacher(['Jamal Crawford', 'Lou Williams', 'J. R. Smith', 'James Harden', 'Jason Terry', 'Manu Ginobli']);
+
+const alSmith = new HighSchool('Al E. Smith', 415, ['Baseball', 'Basketball', 'Volleyball', 'Track and Field']);
+
+alSmith.quickFacts();
