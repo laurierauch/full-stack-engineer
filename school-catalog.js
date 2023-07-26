@@ -25,8 +25,9 @@ class School {
   }
 
   quickFacts() {
-    console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
-  }
+  this.numberOfStudents = this._numberOfStudents; // makes sure the setter gets called correctly when this runs
+  console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
+}
 
   static pickSubstituteTeacher(){
     const substituteTeachers = [];
