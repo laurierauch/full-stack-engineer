@@ -25,7 +25,8 @@ class School {
   }
 
   quickFacts() {
-  this.numberOfStudents = this._numberOfStudents; // makes sure the setter gets called correctly when this runs
+  this.numberOfStudents = this._numberOfStudents;
+  // makes sure the setter is called correctly
   console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`);
 }
 
